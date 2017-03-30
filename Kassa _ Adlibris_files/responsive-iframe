@@ -1,0 +1,1 @@
+﻿(function(){"use strict";function t(n){var t=$(n),i;t.removeAttr("width");t.removeAttr("height");t.wrap('<div class="responsive-container"><\/div>');i=t.attr("src");i=i.replace(/^https?:\/\//i,"//");t.attr("src",i)}function i(){n=$(".js-alter-iframe iframe");$(n).each(function(){t($(this))})}var n;i();$(".js-alter-iframe").addClass("js-alter-iframe--done")})()

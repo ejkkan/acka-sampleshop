@@ -1,0 +1,1 @@
+﻿(function(){"use strict";function n(){var n=$(".checkout-wrapper"),t=$("#cover");n.prop("disabled","disabled");t.height(n.height());t.css("display","block")}$("#main .timeout").length>0&&n()})()
