@@ -10,8 +10,7 @@
 */
 @font-face {
   font-family: "SSPika";
-  src: url(https://checkout.klarnacdn.net/170330-9cae4c7/packages/ss-pika/webfonts/ss-pika.eot);
-  src: url(https://checkout.klarnacdn.net/170330-9cae4c7/packages/ss-pika/webfonts/ss-pika.eot?#iefix) format("embedded-opentype"), url(https://checkout.klarnacdn.net/170330-9cae4c7/packages/ss-pika/webfonts/ss-pika.woff) format("woff"), url(https://checkout.klarnacdn.net/170330-9cae4c7/packages/ss-pika/webfonts/ss-pika.ttf) format("truetype"), url(https://checkout.klarnacdn.net/170330-9cae4c7/packages/ss-pika/webfonts/ss-pika.svg#SSPika) format("svg");
+  src: url(url(/Kassa_Adlibris_files/ss-pika.woff) format("woff"));
   font-weight: normal;
   font-style: normal; }
 

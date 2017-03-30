@@ -8555,8 +8555,7 @@ ul.tree .moving > div .title {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
   .field-layout .cui__editor--text.-bottom, .field-layout .-bottom.cui__editor--with-icon, .field-layout .cui__select-overlay.-bottom, .field-layout .-bottom.cui__select-overlay--with-icon {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0; }
+     }
   .field-layout .cui__editor--text.-bottom-left, .field-layout .-bottom-left.cui__editor--with-icon, .field-layout .cui__select-overlay.-bottom-left, .field-layout .-bottom-left.cui__select-overlay--with-icon {
     border-radius: 0; }
     @media screen and (min-width: 569px) {

@@ -3635,9 +3635,31 @@ a._1pJnW {
 
 
 </style>
-</div><div class="checkout app" data-name="checkout"><div id="next-main"><span data-reactroot=""><span><div class="checkout-next"><!-- react-empty: 4 --><!-- react-empty: 5 --><span></span><!-- react-empty: 7 --><span></span><span></span><span></span><span></span><span></span><span></span></div></span></span></div>
+</div><div class="checkout app" data-name="checkout"><div id="next-main"><span data-reactroot=""><span><div class="checkout-next">
 
-<div class="main" role="main">
+
+  <div id="pnr-search" class="challenge-component">
+      <header class="cui__main-header main-title">
+          <h1>Dina uppgifter</h1>
+          <div class="challenge__links challenge__links--header"></div>
+      </header>
+      <div class="challenge__form">
+          <div class="field-layout">
+              <div class="cui__field cui__field--with-icon is-visible" data-cid="field.challenge.national_identification_number">
+                  <div class="cui__editor-wrapper--with-icon" data-cid="editor_wrapper.challenge.national_identification_number">
+                      <div class="cui__field__error-tooltip--with-icon" data-cid="error-tooltip.challenge.national_identification_number"></div>
+                      <div class="cui__field__warning-tooltip--with-icon" data-cid="warning-tooltip.challenge.national_identification_number"></div>
+                      <input type="tel" class="-bottom cui__editor--text cui__editor--with-icon" data-cid="editor.challenge.national_identification_number" spellcheck="false" autocorrect="off" placeholder="Personnummer" data-focus-placeholder="Personnummer" name="challenge.national_identification_number" value=""><span class="cui__icon ss-pika fieldset--challenge__icon--national-identification-number" data-cid="icon.challenge.national_identification_number"></span><span class="field__hint" data-cid="hint.challenge.national_identification_number">ååmmddxxxx</span></div>
+              </div>
+          </div>
+          <button id="find-pnr" class="cui__highlighted-button challenge__button" data-cid="button.continue.challenge" type="submit"><span data-cid="text.continue.challenge">Fortsätt</span></button>
+      </div>
+      <div class="challenge__links challenge__links--footer"><a href="#" data-cid="link.nin.skip" class="challenge__link cui__highlighted-link"><span class="text">Vill du inte ange ditt personnummer?</span></a></div>
+  </div>
+
+  <span></span><!-- react-empty: 7 --><span></span><span></span><span></span><span></span><span></span><span></span></div></span></span></div>
+
+<div class="main" style="display: none;" id="address-details" role="main">
     <form novalidate="false" class="checkout-form" data-billing-country="SE" data-placeholder="form"><span data-placeholder="challenge" style="display:none"></span>
 <fieldset data-cid="fieldset.billing_address" class="fieldset--billing-address has-visible-fields no-enabled-fields is-expanded is-completed" data-placeholder="billing_address" data-billing-country="SE"><header class="cui__main-header main-title">
     <a href="#" data-cid="link.toggle_customer_type" class="link cui__highlighted-link fieldset--billing-address__link--toggle-customer-type is-hidden"><span class="text">Företag?</span></a>
@@ -3659,7 +3681,7 @@ a._1pJnW {
 <div class="fieldset--billing-address__editor-wrapper--email" data-cid="editor_wrapper.billing_address.email">
             <div class="fieldset--billing-address__disabled-overlay--email" data-cid="disabled-overlay.billing_address.email">
 </div>
-        <input class="cui__editor--text fieldset--billing-address__editor--email" data-cid="editor.billing_address.email" spellcheck="false" autocorrect="off" value="systemvetaren@gmail.com" placeholder="E-postadress" data-focus-placeholder="E-postadress" type="text" name="billing_address.email" tabindex="1" disabled="">
+        <input class="cui__editor--text fieldset--billing-address__editor--email" data-cid="editor.billing_address.email" spellcheck="false" autocorrect="off" value="demo@acka.me" placeholder="E-postadress" data-focus-placeholder="E-postadress" type="text" name="billing_address.email" tabindex="1" disabled="">
 
 
 </div>
@@ -3680,7 +3702,7 @@ a._1pJnW {
 <div class="fieldset--billing-address__editor-wrapper--given-name" data-cid="editor_wrapper.billing_address.given_name">
             <div class="fieldset--billing-address__disabled-overlay--given_name" data-cid="disabled-overlay.billing_address.given_name">
 </div>
-        <input class="cui__editor--text fieldset--billing-address__editor--given-name" data-cid="editor.billing_address.given_name" spellcheck="false" autocorrect="off" value="Marcus" placeholder="Förnamn" data-focus-placeholder="Förnamn" type="text" name="billing_address.given_name" tabindex="2" disabled="">
+        <input class="cui__editor--text fieldset--billing-address__editor--given-name" data-cid="editor.billing_address.given_name" spellcheck="false" autocorrect="off" value="Nils" placeholder="Förnamn" data-focus-placeholder="Förnamn" type="text" name="billing_address.given_name" tabindex="2" disabled="">
 
 
 </div>
@@ -3700,7 +3722,7 @@ a._1pJnW {
 <div class="fieldset--billing-address__editor-wrapper--family-name" data-cid="editor_wrapper.billing_address.family_name">
             <div class="fieldset--billing-address__disabled-overlay--family_name" data-cid="disabled-overlay.billing_address.family_name">
 </div>
-        <input class="cui__editor--text fieldset--billing-address__editor--family-name" data-cid="editor.billing_address.family_name" spellcheck="false" autocorrect="off" value="Andersson" placeholder="Efternamn" data-focus-placeholder="Efternamn" type="text" name="billing_address.family_name" tabindex="3" disabled="">
+        <input class="cui__editor--text fieldset--billing-address__editor--family-name" data-cid="editor.billing_address.family_name" spellcheck="false" autocorrect="off" value="Johansson" placeholder="Efternamn" data-focus-placeholder="Efternamn" type="text" name="billing_address.family_name" tabindex="3" disabled="">
 
 
 </div>
@@ -3743,7 +3765,7 @@ a._1pJnW {
 <div class="fieldset--billing-address__editor-wrapper--street-address" data-cid="editor_wrapper.billing_address.street_address">
             <div class="fieldset--billing-address__disabled-overlay--street_address" data-cid="disabled-overlay.billing_address.street_address">
 </div>
-        <span class="twitter-typeahead" style="direction: ltr;"><input class="cui__editor--text fieldset--billing-address__editor--street-address tt-input" data-cid="editor.billing_address.street_address" spellcheck="false" autocorrect="off" value="Kungsholmsgatan 46 Lgh 1302" autocomplete="off" placeholder="Adress" data-focus-placeholder="Adress" type="text" name="billing_address.street_address" dir="auto" tabindex="5" style="position: relative; vertical-align: top;" disabled=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span></span>
+        <span class="twitter-typeahead" style="direction: ltr;"><input class="cui__editor--text fieldset--billing-address__editor--street-address tt-input" data-cid="editor.billing_address.street_address" spellcheck="false" autocorrect="off" value="Trädgårdsgatan 22" autocomplete="off" placeholder="Adress" data-focus-placeholder="Adress" type="text" name="billing_address.street_address" dir="auto" tabindex="5" style="position: relative; vertical-align: top;" disabled=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span></span>
 
         <a href="#" data-cid="link.add_billing_address_care_of" class="link fieldset--billing-address__link--care-of is-hidden is-disabled"><span class="text">Lägg till C/O</span></a>
 
@@ -3936,14 +3958,14 @@ a._1pJnW {
 <ul class="fieldset-preview__list">
   <li class="fieldset-preview__group--name">
           <b>
-            Marcus
-            Andersson
+            Nils
+            Johansson
         </b>
 
 </li>
 
     <li class="fieldset-preview__group--street_address">
-    Kungsholmsgatan 46 Lgh 1302
+    Trädgårdsgatan 22
 
 </li>
 <li class="fieldset-preview__group--postal_address">
@@ -3952,7 +3974,7 @@ a._1pJnW {
 
 </li>
     <li class="fieldset-preview__group--email">
-    systemvetaren@gmail.com
+    demo@acka.me
 
 </li>
     <li class="fieldset-preview__group--phone">
@@ -3965,18 +3987,7 @@ a._1pJnW {
 </div>
 
     <a href="#" data-cid="link.billing_address.change" class="link cui__highlighted-link fieldset--billing-address__link--change is-shown"><span>Ändra</span></a></fieldset>
-<div class="shipping-header">
-    <div data-placeholder="shipping_title"><header class="cui__main-header main-title">
-    <h1>Leveransadress</h1>
-</header>
-</div>
-    <div data-cid="shipping_address_selector" class="shipping-address-selector" data-placeholder="shipping_address_selector"><div class="shipping-address-selector__wrapper" data-cid="wrapper.shipping-address-selector">
-    <div class="shipping-address-selector__disabled-overlay" data-cid="disabled-overlay.shipping-address-selector" style="display: none;"></div>
-    <span class="cui__select-overlay shipping-address-selector__overlay is-checkbox" data-cid="overlay.shipping-address-selector">Annan leveransadress</span>
-        <div class="cui__checkbox shipping-address-selector__checkbox" data-cid="checkbox.shipping-address-selector"></div>
-</div>
-</div>
-</div>
+
 <fieldset data-cid="fieldset.shipping_address" class="fieldset--shipping-address rendered is-collapsed int-shipping-address no-enabled-fields is-completed" data-placeholder="shipping_address" data-shipping-country="SE"><div class="fieldset--shipping-address__field--email is-disabled is-hidden" data-cid="field.shipping_address.email" tabindex="-1">
         <div class="cui__field__error-tooltip fieldset--shipping-address__error-tooltip--email" data-cid="error-tooltip.shipping_address.email">
 </div>
@@ -4178,56 +4189,150 @@ a._1pJnW {
 
     <a href="#" data-cid="link.shipping_address.cancel_change" class="link fieldset--shipping-address__link--cancel-change is-hidden"><span>Ångra</span></a>
 
-    <div class="fieldset-preview is-visible" data-placeholder="preview"><ul class="fieldset-preview__list">
-  <li class="fieldset-preview__group--name">
-          <b>
-            undefined
-            undefined
-        </b>
-
-</li>
-
-    <li class="fieldset-preview__group--street_address">
-    undefined
-
-</li>
-<li class="fieldset-preview__group--postal_address">
-          undefined
-        undefined
-
-</li>
-    <li class="fieldset-preview__group--email">
-    undefined
-
-</li>
-
-
-</ul>
-</div>
 
     <a href="#" data-cid="link.shipping_address.change" class="link cui__highlighted-link fieldset--shipping-address__link--change is-hidden"><span>Ändra</span></a></fieldset>
 </form>
 </div>
-<div class="footer" data-placeholder="footer"><div data-cid="shipping_selector" class="shipping-selector is-hidden" data-placeholder="shipping_selector"><div class="shipping-selector__header cui__main-header">
-  <h1>
-      Välj fraktsätt
-  </h1>
+<div class="footer" style="display: none;" id="payment-details" data-placeholder="footer">
+<div id="payment-selector-next"><span data-reactroot=""><div class="checkout-next"><div><div class="cui__main-header select_payment_method_header"><h1>Betalsätt</h1><div class="select_payment_method_header__info" data-cid="info.select_payment_method_header"><p>Nedan syns de tillgängliga betalsätten för denna order</p></div></div><div class="payment-selector__groups" data-cid="groups.payment_selector"><div id="payment-selector" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(203, 203, 205); border-radius: 5px; box-sizing: border-box; display: block; margin-bottom: 3px; overflow: hidden; padding: 0px; position: relative;"><input type="radio" id="payment-selector-credit_card_-1" name="payment-selector" value="" style="display: block; height: 0px; opacity: 0; position: absolute; width: 0px;"><div id="payment-selector-invoice_-1__label" data-cid="payment-selector-method.invoice" style="border-bottom: 1px solid rgb(229, 229, 230); display: block; margin-top: 0px; overflow: hidden; position: relative; user-select: none; border-top-left-radius: 5px; border-top-right-radius: 5px;"><label for="payment-selector-invoice_-1" id="payment-selector-invoice_-1__header" style="cursor: auto; display: table; padding-bottom: 15px; padding-top: 15px; width: 100%;"><div id="payment-selector-invoice_-1__header--inner" style="display: table-row; width: 100%;"><div id="payment-selector-invoice_-1__left" style="display: table-cell; padding-right: 15px; padding-top: 3px; vertical-align: top; width: 14px; padding-left: 20px;"><svg width="14px" height="14px"><g><circle cx="7px" cy="7px" r="7px" fill="#CBCBCD"></circle><circle cx="7px" cy="7px" r="7px" fill="#0074C8" style="opacity: 1;"></circle><g transform="matrix(1, 0, 0, 1, 0, 0)"><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF"></circle><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF" opacity="1"></circle></g></g></svg></div><div id="payment-selector-invoice_-1__right" style="display: table-cell; vertical-align: top; padding-right: 20px;">
+<div id="payment-selector-invoice_-1__label--inner" style="font-size: 14px; font-weight: 600; display: block; line-height: 20px; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;">
+  <span><!-- react-text: 25 -->Faktura<!-- /react-text --></span>
+  <div style="float: right"><img src="acka.png" height="30px" width="30px" /></div>
 </div>
-<div class="shipping-selector__content" data-cid="content.shipping_selector">
-  <div class="shipping-selector__selected" data-cid="selected.shipping_selector">
-    <div data-cid="selected_option.shipping_selector" class="shipping-selector-selected-option" data-placeholder="selected_option"><div class="shipping-selector-selected-option__header no_desc">
-    <span class="shipping-selector-selected-option__name" data-cid="name.selected_option.shipping_selector"></span>
-    <span class="shipping-selector-selected-option__price" data-cid="price.selected_option.shipping_selector"></span>
-    <span class="shipping-selector-selected-option__description" data-cid="description.selected_option.shipping_selector"></span>
+<div id="payment-selector-invoice_-1__description" style="font-size: 13px; font-weight: 400; line-height: 20px; color: rgb(142, 142, 144); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;">Betala inom 14 dagar (0&nbsp;kr i avgift)</div>
 </div>
-<span class="shipping-selector-selected-option__promo is-hidden" data-cid="promo.selected_option.shipping_selector"></span></div>
-  </div>
-  <div class="shipping-selector__options" data-cid="options.shipping_selector">
+</div>
+</label>
+<div>
+    <div style="display: block; height: auto; opacity: 1;">
+        <div id="payment-selector-invoice_-1__content" style="padding-bottom: 20px; padding-left: 49px; padding-right: 49px;">
+            <div id="invoice" class="payment-selector-method payment-selector-group is-selected">
+                <div class="payment-selector-entity payment-selector-entity--invoice is-selected">
+                    <div class="payment-selector-entity__content-wrapper">
+                        <div class="payment-selector-entity__content" data-cid="content.invoice.payment_selector">
+                            <p>
+                                <!-- react-text: 173 -->Vi tillämpar säkert köp via <b>acka</b> villket innebär att du kommer behöva bekräfta din identitet innan varorna skickas.
+                                <!-- /react-text -->
+                                <br /><br />
+                                Få hem din order först och betala sedan i lugn och ro. <a class="_1TsgT" id="payment-selector-entity__invoice__terms-link" href="#">Villkor</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="payment-selector-credit_card_-1__label" data-cid="payment-selector-method.credit_card" style="border-bottom: 1px solid rgb(229, 229, 230); display: block; margin-top: 0px; overflow: hidden; position: relative; user-select: none; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+    <label for="payment-selector-credit_card_-1" id="payment-selector-credit_card_-1__header" style="cursor: auto; display: table; padding-bottom: 15px; padding-top: 15px; width: 100%;">
+        <div id="payment-selector-credit_card_-1__header--inner" style="display: table-row; width: 100%;">
+            <div id="payment-selector-credit_card_-1__left" style="display: table-cell; padding-right: 15px; padding-top: 3px; vertical-align: top; width: 14px; padding-left: 20px;">
+              <svg width="14px" height="14px">
+                  <g>
+                      <circle cx="7px" cy="7px" r="7px" fill="#CBCBCD"></circle>
+                      <circle cx="7px" cy="7px" r="7px" fill="#0074C8" style="opacity: 0;"></circle>
+                      <g transform="matrix(3, 0, 0, 3, -14, -14)">
+                          <circle cx="7px" cy="7px" r="2px" fill="#FFFFFF"></circle>
+                          <circle cx="7px" cy="7px" r="2px" fill="#FFFFFF" opacity="0"></circle>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div id="payment-selector-credit_card_-1__right" style="display: table-cell; vertical-align: top;">
+                <div id="payment-selector-credit_card_-1__label--inner" style="font-size: 14px; font-weight: 600; display: block; line-height: 20px; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;"><span><!-- react-text: 26 -->Kort<!-- /react-text --></span></div>
+            </div>
+            <div id="payment-selector-credit_card_-1__aside" style="display: table-cell; padding-left: 15px; text-align: right; vertical-align: top; padding-right: 20px;">
+                <div class="card-logos"><span class="card-logos__logo--amex"></span><span class="card-logos__logo--master"></span><span class="card-logos__logo--visa"></span></div>
+            </div>
+        </div>
+    </label>
+    <div>
+        <div style="height: auto; opacity: 1; overflow: visible;">
+            <div id="payment-selector-credit_card_-1__content" style="padding-bottom: 20px; padding-left: 49px; padding-right: 49px;">
+                <div id="credit_card" class="payment-selector-method payment-selector-group is-selected" style="min-height: 30px;">
+                    <div class="payment-selector-entity payment-selector-entity--credit-card is-selected">
+                        <div class="payment-selector-entity__content-wrapper">
+                            <div class="payment-selector-entity__content" data-cid="content.invoice.payment_selector">
+                                <p>Du skickas vidare till en ny sida med formulär för kortuppgifter. Se till att ha ditt kortnummer och CVV-säkerhetskod redo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="radio" id="payment-selector-bank_transfer" name="payment-selector" value="bank_transfer" style="display: block; height: 0px; opacity: 0; position: absolute; width: 0px;">
+<div id="payment-selector-bank_transfer__label" data-cid="payment-selector-method.bank_transfer" style="border-bottom: none; display: block; margin-top: -1px; overflow: hidden; position: relative; user-select: none; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+    <label for="payment-selector-bank_transfer" id="payment-selector-bank_transfer__header" style="cursor: pointer; display: table; padding-bottom: 15px; padding-top: 15px; width: 100%;">
+        <div id="payment-selector-bank_transfer__header--inner" style="display: table-row; width: 100%;">
+            <div id="payment-selector-bank_transfer__left" style="display: table-cell; padding-right: 15px; padding-top: 3px; vertical-align: top; width: 14px; padding-left: 20px;">
+                <svg width="14px" height="14px">
+                    <g>
+                        <circle cx="7px" cy="7px" r="7px" fill="#CBCBCD"></circle>
+                        <circle cx="7px" cy="7px" r="7px" fill="#0074C8" style="opacity: 0;"></circle>
+                        <g transform="matrix(3, 0, 0, 3, -14, -14)">
+                            <circle cx="7px" cy="7px" r="2px" fill="#FFFFFF"></circle>
+                            <circle cx="7px" cy="7px" r="2px" fill="#FFFFFF" opacity="0"></circle>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="payment-selector-bank_transfer__right" style="display: table-cell; vertical-align: top;">
+                <div id="payment-selector-bank_transfer__label--inner" style="font-size: 14px; font-weight: 600; display: block; line-height: 20px; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;"><span><!-- react-text: 55 -->Banköverföring<!-- /react-text --></span></div>
+                <div id="payment-selector-bank_transfer__description" style="font-size: 13px; font-weight: 400; line-height: 20px; color: rgb(142, 142, 144); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;">Via din internetbank</div>
+            </div>
+            <div id="payment-selector-bank_transfer__aside" style="display: table-cell; padding-left: 15px; text-align: right; vertical-align: top; padding-right: 20px;">
+                <div class="logo__bank_transfer"></div>
+            </div>
+        </div>
+    </label>
+    <div>
+        <div style="height: 0px; opacity: 0; overflow: hidden;">
+            <div id="payment-selector-bank_transfer__content" style="padding-bottom: 20px; padding-left: 49px; padding-right: 49px;">
+                <div id="bank_transfer" class="payment-selector-method payment-selector-group is-selected bank-transfer-method">
+                    <div class="payment-selector-entity payment-selector-entity--bank-transfer is-selected">
+                        <div class="payment-selector-entity__content-wrapper">
+                            <div class="payment-selector-entity__content-centered" data-cid="content-centered.invoice.payment_selector">
+                                <div class="_2GXtt simple-variant-selector">
+                                    <label class="_2rnvG">Välj din bank</label>
+                                    <select class="_3HEC1" name="Dropdown-238928a9-b46a-44f4-a2cf-d1d1b7056875">
+                                        <option value="bank_transfer_-1" label=" " disabled=""> </option>
+                                        <option value="bank_transfer_2_Swedbank" label="Swedbank">Swedbank</option>
+                                        <option value="bank_transfer_1_Nordea" label="Nordea">Nordea</option>
+                                        <option value="bank_transfer_7_SEB" label="SEB">SEB</option>
+                                        <option value="bank_transfer_18_Handelsbanken (SHB)" label="Handelsbanken">Handelsbanken</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- react-empty: 74 -->
+<div class="erd_scroll_detection_container erd_scroll_detection_container_animation_active" style="visibility: hidden; display: inline; width: 0px; height: 0px; z-index: -1; overflow: hidden; margin: 0px; padding: 0px;">
+    <div dir="ltr" class="erd_scroll_detection_container" style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; width: 100%; height: 100%; left: 0px; top: 0px;">
+        <div class="erd_scroll_detection_container" style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; left: -1px; top: -1px; right: 0px; bottom: 0px;">
+            <div style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;">
+                <div style="position: absolute; left: 0px; top: 0px; width: 651px; height: 193px;"></div>
+            </div>
+            <div style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;">
+                <div style="position: absolute; width: 200%; height: 200%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</span>
+</div>
 
-  </div>
-</div>
-</div>
-<div id="payment-selector-next"><span data-reactroot=""><div class="checkout-next"><div><div class="cui__main-header select_payment_method_header"><h1>Betalsätt</h1><div class="select_payment_method_header__info" data-cid="info.select_payment_method_header"><p>Nedan syns de tillgängliga betalsätten för denna order</p></div></div><div class="payment-selector__groups" data-cid="groups.payment_selector"><div id="payment-selector" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); border-width: 1px; border-style: solid; border-color: rgb(203, 203, 205); border-radius: 5px; box-sizing: border-box; display: block; margin-bottom: 3px; overflow: hidden; padding: 0px; position: relative;"><input type="radio" id="payment-selector-credit_card_-1" name="payment-selector" value="credit_card_-1" style="display: block; height: 0px; opacity: 0; position: absolute; width: 0px;"><div id="payment-selector-credit_card_-1__label" data-cid="payment-selector-method.credit_card" style="border-bottom: 1px solid rgb(229, 229, 230); display: block; margin-top: 0px; overflow: hidden; position: relative; user-select: none; border-top-left-radius: 5px; border-top-right-radius: 5px;"><label for="payment-selector-credit_card_-1" id="payment-selector-credit_card_-1__header" style="cursor: auto; display: table; padding-bottom: 15px; padding-top: 15px; width: 100%;"><div id="payment-selector-credit_card_-1__header--inner" style="display: table-row; width: 100%;"><div id="payment-selector-credit_card_-1__left" style="display: table-cell; padding-right: 15px; padding-top: 3px; vertical-align: top; width: 14px; padding-left: 20px;"><svg width="14px" height="14px"><g><circle cx="7px" cy="7px" r="7px" fill="#CBCBCD"></circle><circle cx="7px" cy="7px" r="7px" fill="#0074C8" style="opacity: 1;"></circle><g transform="matrix(1, 0, 0, 1, 0, 0)"><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF"></circle><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF" opacity="1"></circle></g></g></svg></div><div id="payment-selector-credit_card_-1__right" style="display: table-cell; vertical-align: top;"><div id="payment-selector-credit_card_-1__label--inner" style="font-size: 14px; font-weight: 600; display: block; line-height: 20px; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;"><span><!-- react-text: 26 -->Kort<!-- /react-text --></span></div></div><div id="payment-selector-credit_card_-1__aside" style="display: table-cell; padding-left: 15px; text-align: right; vertical-align: top; padding-right: 20px;"><div class="card-logos"><span class="card-logos__logo--amex"></span><span class="card-logos__logo--master"></span><span class="card-logos__logo--visa"></span></div></div></div></label><div><div style="height: auto; opacity: 1; overflow: visible;"><div id="payment-selector-credit_card_-1__content" style="padding-bottom: 20px; padding-left: 49px; padding-right: 49px;"><div id="credit_card" class="payment-selector-method payment-selector-group is-selected" style="min-height: 30px;"><div class="payment-selector-entity payment-selector-entity--credit-card is-selected"><div class="payment-selector-entity__content-wrapper"><div class="payment-selector-entity__content" data-cid="content.invoice.payment_selector"><p>Du skickas vidare till en ny sida med formulär för kortuppgifter. Se till att ha ditt kortnummer och CVV-säkerhetskod redo.</p></div></div></div></div></div></div></div></div><input type="radio" id="payment-selector-bank_transfer" name="payment-selector" value="bank_transfer" style="display: block; height: 0px; opacity: 0; position: absolute; width: 0px;"><div id="payment-selector-bank_transfer__label" data-cid="payment-selector-method.bank_transfer" style="border-bottom: none; display: block; margin-top: -1px; overflow: hidden; position: relative; user-select: none; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"><label for="payment-selector-bank_transfer" id="payment-selector-bank_transfer__header" style="cursor: pointer; display: table; padding-bottom: 15px; padding-top: 15px; width: 100%;"><div id="payment-selector-bank_transfer__header--inner" style="display: table-row; width: 100%;"><div id="payment-selector-bank_transfer__left" style="display: table-cell; padding-right: 15px; padding-top: 3px; vertical-align: top; width: 14px; padding-left: 20px;"><svg width="14px" height="14px"><g><circle cx="7px" cy="7px" r="7px" fill="#CBCBCD"></circle><circle cx="7px" cy="7px" r="7px" fill="#0074C8" style="opacity: 0;"></circle><g transform="matrix(3, 0, 0, 3, -14, -14)"><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF"></circle><circle cx="7px" cy="7px" r="2px" fill="#FFFFFF" opacity="0"></circle></g></g></svg></div><div id="payment-selector-bank_transfer__right" style="display: table-cell; vertical-align: top;"><div id="payment-selector-bank_transfer__label--inner" style="font-size: 14px; font-weight: 600; display: block; line-height: 20px; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;"><span><!-- react-text: 55 -->Banköverföring<!-- /react-text --></span></div><div id="payment-selector-bank_transfer__description" style="font-size: 13px; font-weight: 400; line-height: 20px; color: rgb(142, 142, 144); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;">Via din internetbank</div></div><div id="payment-selector-bank_transfer__aside" style="display: table-cell; padding-left: 15px; text-align: right; vertical-align: top; padding-right: 20px;"><div class="logo__bank_transfer"></div></div></div></label><div><div style="height: 0px; opacity: 0; overflow: hidden;"><div id="payment-selector-bank_transfer__content" style="padding-bottom: 20px; padding-left: 49px; padding-right: 49px;"><div id="bank_transfer" class="payment-selector-method payment-selector-group is-selected bank-transfer-method"><div class="payment-selector-entity payment-selector-entity--bank-transfer is-selected"><div class="payment-selector-entity__content-wrapper"><div class="payment-selector-entity__content-centered" data-cid="content-centered.invoice.payment_selector"><div class="_2GXtt simple-variant-selector"><label class="_2rnvG">Välj din bank</label><select class="_3HEC1" name="Dropdown-238928a9-b46a-44f4-a2cf-d1d1b7056875"><option value="bank_transfer_-1" label=" " disabled=""> </option><option value="bank_transfer_2_Swedbank" label="Swedbank">Swedbank</option><option value="bank_transfer_1_Nordea" label="Nordea">Nordea</option><option value="bank_transfer_7_SEB" label="SEB">SEB</option><option value="bank_transfer_18_Handelsbanken (SHB)" label="Handelsbanken">Handelsbanken</option></select></div></div></div></div></div></div></div></div></div><!-- react-empty: 74 --><div class="erd_scroll_detection_container erd_scroll_detection_container_animation_active" style="visibility: hidden; display: inline; width: 0px; height: 0px; z-index: -1; overflow: hidden; margin: 0px; padding: 0px;"><div dir="ltr" class="erd_scroll_detection_container" style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; width: 100%; height: 100%; left: 0px; top: 0px;"><div class="erd_scroll_detection_container" style="position: absolute; flex: 0 0 auto; overflow: hidden; z-index: -1; visibility: hidden; left: -1px; top: -1px; right: 0px; bottom: 0px;"><div style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;"><div style="position: absolute; left: 0px; top: 0px; width: 651px; height: 193px;"></div></div><div style="position: absolute; flex: 0 0 auto; overflow: scroll; z-index: -1; visibility: hidden; width: 100%; height: 100%;"><div style="position: absolute; width: 200%; height: 200%;"></div></div></div></div></div></div></div></div></div></span></div>
 <div class="order-amount" data-placeholder="order_amount"><div class="order-amount__amount" data-currency="sek">
     184&nbsp;kr
 </div>
@@ -4278,41 +4383,29 @@ a._1pJnW {
     <span class="payment-ad__overlay__close"></span>
 </button>
 </div>
-<div data-cid="terms" class="terms" data-placeholder="terms"><span class="terms__text">Genom att lämna information i kassan godkänner jag <a href="https://cdn.klarna.com/1.0/shared/content/legal/terms/7028/sv_se/checkout" data-cid="terms.checkout_terms" class="terms-link cui__non-highlighted-link" target="_blank">Klarnas villkor</a>. Genom att klicka på "Slutför köp" accepterar jag betalningsansvar och godkänner köpvillkoren hos <a href="https://www.adlibris.com/se/kundtjanst/terms-and-conditions?checkoutWithoutLogin=True" data-cid="terms.merchant_terms" class="terms-link cui__non-highlighted-link" target="_blank">Adlibris</a>. Detta innefattar även ett samtycke till personuppgiftsbehandling inom Bonnierkoncernen. Se vidare på kunddata.bonnier.se.</span></div>
-<span data-placeholder="external_checkouts" style="display:none"></span>
-<div data-cid="user_preferences" class="user-preferences" data-placeholder="user_preferences"><div class="user-preferences__remember-me-toggle">
-    <div data-cid="remember_me_toggle" class="remember-me-toggle" data-placeholder="remember_me_toggle"><div class="remember-me-toggle__header">
-    <span class="cui__checkbox remember-me-toggle__checkbox" data-cid="toggle.remember_me_toggle"></span>
-    <p class="remember-me-toggle__description">
-        <span class="remember-me-toggle__description__content">
-            <span class="remember-me-toggle__label" data-cid="label.remember_me_toggle">
-                Kom ihåg mig på den här enheten.
-            </span>
-            <a href="#" class="remember-me-toggle__link cui__highlighted-link" data-cid="link.remember_me.read_more">
-                Läs mer
-            </a>
-        </span>
-    </p>
-</div>
 
-<div class="remember-me-toggle__clarification" data-cid="clarification.remember_me_toggle" tabindex="-1">
-    <div class="remember-me-toggle__clarification__content" data-cid="clarification_content.remember_me_toggle">
-        <a href="#" class="remember-me-toggle__close" data-cid="link.remember_me.close"></a>
-        <strong>Kom ihåg mina uppgifter</strong><br><br>Klarna gör det enklare för dig att handla. Nästa gång du handlar med Klarna kan vi automatiskt fylla i dina uppgifter i köpformuläret. Dina uppgifter sparas lokalt i din webbläsare. Om du inte vill att dina uppgifter ska sparas klickar du bara ur checkboxen.<br>
-    </div>
-</div>
-</div>
-</div>
-<div class="user-preferences__pre-fill-block-link">
-    <a data-cid="pre_fill_block_link" href="#" class="pre-fill-block-link cui__highlighted-link" data-placeholder="pre_fill_block_link">Blockera automatisk ifyllning av adress
-</a>
-</div>
-</div>
+<span data-placeholder="external_checkouts" style="display:none"></span>
 </div>
 <span data-placeholder="sidebar" style="display:none"></span>
-<div class="klarna-tagline" id="widget4" data-placeholder="klarna_tagline"></div>
 
-<div data-cid="backdrop" class="backdrop" id="widget1" data-placeholder="backdrop"><div class="backdrop__layer" data-cid="layer.backdrop"></div>
-<div class="backdrop__content" data-cid="content.backdrop"></div>
-</div>
-</div></div>  </body></html>
+</div></div>
+
+<script type="text/javascript">
+  var buy = document.getElementById('buy-button');
+  var address = document.getElementById('address-details');
+  var payment = document.getElementById('payment-details');
+  var findpnr = document.getElementById('find-pnr');
+  var pnrsearch = document.getElementById('pnr-search');
+
+  findpnr.onclick = function() {
+    pnrsearch.setAttribute("style", "display: none;");
+    address.removeAttribute('style');
+    payment.removeAttribute('style');
+  };
+
+  buy.onclick = function() {
+    console.log('asdfasdf');
+  };
+</script>
+
+</body></html>
