@@ -3635,12 +3635,12 @@ a._1pJnW {
 
 
 </style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </div><div class="checkout app" data-name="checkout"><div id="next-main"><span data-reactroot=""><span><div class="checkout-next">
-
 
   <div id="pnr-search" class="challenge-component">
       <header class="cui__main-header main-title">
-          <h1>Dina uppgifter</h1>
+          <h1>Dina uppgifter</h1><span id="error-message"></span>
           <div class="challenge__links challenge__links--header"></div>
       </header>
       <div class="challenge__form">
@@ -3654,7 +3654,6 @@ a._1pJnW {
           </div>
           <button id="find-pnr" class="cui__highlighted-button challenge__button" data-cid="button.continue.challenge" type="submit"><span data-cid="text.continue.challenge">Fortsätt</span></button>
       </div>
-      <div class="challenge__links challenge__links--footer"><a href="#" data-cid="link.nin.skip" class="challenge__link cui__highlighted-link"><span class="text">Vill du inte ange ditt personnummer?</span></a></div>
   </div>
 
   <span></span><!-- react-empty: 7 --><span></span><span></span><span></span><span></span><span></span><span></span></div></span></span></div>
@@ -3664,7 +3663,6 @@ a._1pJnW {
 <fieldset data-cid="fieldset.billing_address" class="fieldset--billing-address has-visible-fields no-enabled-fields is-expanded is-completed" data-placeholder="billing_address" data-billing-country="SE"><header class="cui__main-header main-title">
     <a href="#" data-cid="link.toggle_customer_type" class="link cui__highlighted-link fieldset--billing-address__link--toggle-customer-type is-hidden"><span class="text">Företag?</span></a>
     <h1>Adress&nbsp;
-      <a href="#" data-cid="link.this_is_not_me" class="link cui__highlighted-link fieldset--billing-address__link--this-is-not-me is-shown"><span class="text">Inte du?</span></a>
       <a href="#" data-cid="link.nin.unskip" class="link cui__highlighted-link fieldset--billing-address__link--unskip-nin is-hidden"><span class="text">Jag vill ange personnummer</span></a>
     </h1>
 </header>
@@ -3945,14 +3943,10 @@ a._1pJnW {
   <span class="fieldset--billing-address__show-prefill-info__icon"></span>
 </a>
 
-<div class="fieldset--billing-address__prefill-info is-hidden" data-cid="prefill_info.billing_address">
-  <a href="#" class="fieldset--billing-address__hide-prefill-info" data-cid="hide.prefill_info.billing_address">
-    <span class="fieldset--billing-address__hide-prefill-info__icon"></span>
-  </a>
-  <button class="fieldset--billing-address__prefill-info__content">
-    <span class="fieldset--billing-address__prefill-info__title">Var dina uppgifter förifyllda?</span>
-    <span class="fieldset--billing-address__prefill-info__description">Vi hjälpte dig fylla i formuläret med hjälp av uppgifter sparade i din webbläsare och hos oss på Klarna. Vi delar endast uppgifterna med butiken om du genomför ett köp.</span>
-  </button>
+<div class="fieldset--billing-address__prefill-info" style="display: none;" data-cid="prefill_info.billing_address">
+  <div style="text-align: center">
+    <span id="unlock-text"></span>
+  </div>
 </div>
 
 <ul class="fieldset-preview__list">
@@ -4391,21 +4385,178 @@ a._1pJnW {
 </div></div>
 
 <script type="text/javascript">
-  var buy = document.getElementById('buy-button');
-  var address = document.getElementById('address-details');
-  var payment = document.getElementById('payment-details');
-  var findpnr = document.getElementById('find-pnr');
-  var pnrsearch = document.getElementById('pnr-search');
-
-  findpnr.onclick = function() {
-    pnrsearch.setAttribute("style", "display: none;");
-    address.removeAttribute('style');
-    payment.removeAttribute('style');
+  var users = {
+    '19900218': {
+      name: '<b>Erik Magnusson</b>',
+      address: 'Vintergatan 1',
+      area: '1337 Stockholm',
+      phone: '073 *** ** 40'
+    },
+    '19851006': {
+      name: '<b>Marcus Andersson</b>',
+      address: 'Galaxgatan 90',
+      area: '11225 Stockholm',
+      phone: '070 *** ** 39'
+    }
   };
 
-  buy.onclick = function() {
-    console.log('asdfasdf');
-  };
+  function getParameterByName(name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  function getTotalPrice() {
+    var price = window.parent.document.getElementById('cart-total').innerText;
+    return parseInt(price.replace(' kr', ''));
+  }
+
+  function getResponseUrl(reference) {
+    var pp = getParameterByName('pp', window.parent.location) || 'klarna';
+    return 'https://api.' + pp + '.se/' + reference;
+  }
+
+  function validatePnr(input) {
+    $('#error-message').text('');
+
+    var pnr = input.val();
+    if(!pnr || pnr.length < 10) {
+      $('#error-message').text('* ogiltigt personnummer, var god testa igen.');
+      return false;
+    }
+
+    var user = users[pnr.substr(0,8)];
+
+    if(!user) {
+      $('#error-message').text('* ogiltigt personnummer, var god testa igen.');
+      return false;
+    }
+
+    return user;
+  }
+
+  function updateAddress(user) {
+    var name = $('li.fieldset-preview__group--name');
+    var address = $('li.fieldset-preview__group--street_address');
+    var area = $('li.fieldset-preview__group--postal_address');
+    var phone = $('li.fieldset-preview__group--phone');
+
+    name.html(user.name);
+    address.text(user.address);
+    area.text(user.area);
+    phone.text(user.phone);
+  }
+
+  function updateTotalPrice() {
+    $('div.order-amount__amount').text(getTotalPrice() + ' kr');
+  }
+
+  var mode = getParameterByName('mode', window.parent.location) || 'unlock';
+
+  var addressContainer = $('#address-details');
+  var paymentContainer = $('#payment-details');
+  var searchPnrContainer = $('#pnr-search');
+  var changeAddress = $('a.fieldset--billing-address__link--change');
+  var pnrInput = searchPnrContainer.find("input[name='challenge.national_identification_number']");
+
+  var searchPnrButton = $('#find-pnr');
+  var buyButton = $('#buy-button');
+
+  changeAddress.click(function() {
+    searchPnrContainer.show();
+    paymentContainer.hide();
+    addressContainer.hide();
+  });
+
+  searchPnrButton.click(function() {
+    var user = validatePnr(pnrInput);
+    if(!user) {
+      return;
+    }
+
+    updateAddress(user);
+    updateTotalPrice();
+
+    if(mode === 'unlock') {
+      $.ajax({
+           url: "https://api.acka.me/v1/credit-check?ssn=" + pnrInput.val(),
+           type: "GET",
+           crossDomain: true,
+           contentType: "application/json; charset=utf-8",
+           dataType: "json",
+           success: function (response) {
+             searchPnrContainer.hide();
+             paymentContainer.show();
+             addressContainer.show();
+           },
+           error: function (xhr, status) {
+             if(xhr.responseJSON.code === 403) {
+
+               return;
+             }
+             alert("error");
+           }
+       });
+    }
+
+    if(mode === 'confirm') {
+      searchPnrContainer.hide();
+      paymentContainer.show();
+      addressContainer.show();
+    }
+  });
+
+
+  buyButton.click(function() {
+    if(mode === 'confirm') {
+      var reference = 'ac' + Date.now() + 'kdfm';
+
+      const data = {
+        ssn: pnrInput.val(),
+        issuer: 'Adlibris.se',
+        reference: reference,
+        amount: getTotalPrice(),
+        currency: 'SEK',
+        responseUrl: getResponseUrl(reference),
+        created: new Date().toISOString()
+      };
+
+      $.ajax({
+           url: "https://api.acka.me/v1/confirmations/purchase",
+           type: "POST",
+           crossDomain: true,
+           data: JSON.stringify(data),
+           contentType: "application/json; charset=utf-8",
+           dataType: "json",
+           success: function (response) {
+               window.parent.location.pathname = '/confirm.htm';
+           },
+           error: function (xhr, status) {
+             console.log(xhr.responseJSON);
+             alert("error");
+           }
+       });
+    }
+
+    if(mode === 'unlock') {
+      window.parent.location.pathname = '/unlock.htm';
+    }
+  });
+
+  $(window.parent.document).find('div.cart-block-price div.count input').each(function(id, input) {
+    $(input).change(function() {
+      setTimeout(function () {
+        updateTotalPrice();
+      }, 1);
+    });
+  });
+
 </script>
 
 </body></html>
